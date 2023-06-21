@@ -1,3 +1,424 @@
 @mainColor: blue;
 
 @import "pizza/pizza-card";
+.container{
+  display: flex;
+}
+/*@media (max-width: 1000px) {
+  .menu .pizzasTypes{
+    width: 90%;
+  }
+}
+
+ */
+.leftContainer{
+  margin-top: 40px;
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    'menu menu menu'
+    'main main main'
+    'footer footer footer';
+  //grid-template-rows: 1fr 1.2fr 7fr 1fr;
+  margin-right: 275px;
+}
+.rightContainer{
+  width: 275px;
+  //width: 900px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px 0 #999;
+  flex-shrink: 0;
+  position: fixed;
+  right: 0;
+  bottom:0;
+  top:0;
+  display: grid;
+  grid-template-areas: 'orderSection'
+'productList'
+'resultSection';
+  grid-template-rows: 1.35fr 8fr 1fr;
+}
+.product{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.product .name{
+  color: #e0902a;
+}
+.minusButton{
+  color: white;
+  background-color: #b94135;
+  border-radius: 15px;
+  border: #b94135;
+  margin-left: 5px;
+  width: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+.plusButton{
+  color: white;
+  background-color: #5e9e4f;
+  border-radius: 15px;
+  border: #5e9e4f;
+  margin-left: 5px;
+  width: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+.cancelButton{
+  color: #e08e28;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  border: #d0d0d0;
+  margin-left: 15px;
+  width: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+.smallPizza{
+  width: 70px;
+  color: #a1a1a1;
+  margin-bottom: 55px;
+  margin-right: -15%;
+  float: right;
+}
+.a123{
+  border-color: #dddddd;
+  border-width: 2px;
+  width: 80%;
+  display: inline-block;
+
+}
+.size{
+  display: inline-block;
+}
+.weight{
+  display: inline-block;
+}
+.allInfo{
+  display: inline-block;
+}
+.number{
+  margin-left: 5px;
+}
+
+.orderSection{
+  grid-area: orderSection;
+  background-color: white;
+  margin-top: 40px;
+}
+.orderSection .orderLabel{
+  font-weight: bold;
+  font-family:Calibri;
+  font-size: 18px;
+  margin-top: 16px;
+}
+.orderSection .buttonClear{
+  background-color: white;
+  border: white;
+  font-size: smaller;
+}
+.resultSection .sum{
+  margin-left: 5px;
+  margin-top: 5px;
+  font-weight: bold;
+  font-family: Calibri;
+  font-size: 14px;
+}
+.resultSection .sumNumber{
+  margin-left: 90px;
+  font-size: 17px;
+}
+.resultSection .Zamovyti{
+  background-color: #e2a13d;
+  border-color: #de8b3a;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  text-align: center;
+  margin-left: 10%;
+  width: 80%;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+.productList{
+  background-color: #f5f5f5;
+}
+.header{
+  grid-area: header;
+  background-color: #333331;
+  display: grid;
+  grid-template-areas:
+  'pizzaUkma info';
+  grid-template-columns: 1fr 10fr;
+  height: 80px;
+}
+.header .pizzaUkma{
+  background-color: #de8b3a ;
+  margin-left:8%;
+  height: 120%;
+  grid-area: pizzaUkma;
+}
+.header .pizzaUkma .pizza {
+  color: white;
+  text-align: center;
+  margin-left: 23%;
+  margin-top: 20%;
+  font-size: 1.2vw;
+}
+.header .pizzaUkma .KMA{
+  color: white;
+  text-align: center;
+  margin-left: 30%;
+  font-size: 0.9vw;
+}
+.header .info{
+  grid-area: info;
+  display: grid;
+  grid-template-areas: 'text text text button'
+'name name name name';
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 5px;
+  margin-left: 3%;
+}
+.header .info .enter{
+  grid-area: button;
+  width: 50px;
+  font-size: 1.5vw;
+}
+.header .info .text{
+  grid-area: text;
+  height: 40px;
+  justify-content: center;
+  align-content: center;
+ // display: grid;
+  //grid-template-columns: 0.3fr 0.5fr 0.5fr;
+}
+.header .info .piz{
+  grid-area: name;
+  height: 40px;
+}
+.header .info .piz .pizName{
+  color: white;
+}
+.header .info .text .mobPhone{
+  color: #a1a1a1;
+  //font-size: 1.3vw;
+    font-size: 110%;
+}
+.header .info .text .a24\/7{
+  color: #a1a1a1;
+  margin-left: 8px;
+  font-size: 80%;
+  //justify-self: left;
+  //align-self: center;
+  //font-size: 1vw;
+}
+.header .info .text .free{
+  color: #a1a1a1;
+  margin-left: 8px;
+  font-size: 100%;
+  //font-size: 1.1vw;
+}
+.header .info .enter{
+  color: white;
+  background-color: #e29e36;
+  width: 50%;
+  border-radius: 5px;
+  margin-top: 5px;
+  justify-self: center;
+  font-size: 1vw;
+}
+.menu{
+  grid-area: menu;
+  display: grid;
+  grid-template-areas:
+  'allPizzas'
+  'types';
+  grid-template-rows: 1fr 1fr;
+  height: 120px;
+}
+.menu .aP{
+  grid-area: allPizzas;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-areas: 'ap num';
+  grid-template-columns: 4fr 1fr;
+  margin-left: 10px;
+}
+.menu .aP .allPizzas{
+  grid-area: ap;
+  align-self: center;
+  font-size: x-large;
+}
+@media (max-width: 1113px) {
+  .free {
+    display: none;
+  }
+  .mobPhone{
+    width: 40%;
+  }
+}
+@media (max-width: 750px){
+  .a24\/7 {
+    display: none;
+  }
+  .mobPhone{
+    width: 70%;
+  }
+}
+@media (max-width: 510px) {
+  .rightContainer {
+    width: 230px;
+    position: absolute;
+    //left: 232px;
+  }
+  .leftContainer{
+    margin-right: 230px;
+  }
+
+  .сontainer{
+    max-width: 550px;
+    overflow: auto;
+  }
+}
+.menu .pizzasTypes{
+  width: 75%;
+  font-size: smaller;
+  grid-area: types;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-areas: 'type1 type2 type3 type4 type5 type6';
+  grid-template-columns: 0.4fr 0.5fr 0.8fr 0.7fr 1.1fr 0.4fr;
+}
+.menu .pizzasTypes .type1{
+  grid-area: type1;
+  color: #e08e28;
+  font-size: 1.1vw;
+  font-weight: bold;
+  background-color: white;
+  border: white;
+
+}
+.menu .pizzasTypes .type2{
+  grid-area: type2;
+  color: #e08e28;
+  font-size: 1.1vw;
+  font-weight: bold;
+  background-color: white;
+  border: white;
+}
+.menu .pizzasTypes .type3{
+  grid-area: type3;
+  color: #e08e28;
+  font-size: 1.1vw;
+  font-weight: bold;
+  background-color: white;
+  border: white;
+}
+.menu .pizzasTypes .type4{
+  grid-area: type4;
+  color: #e08e28;
+  font-size: 1.1vw;
+  font-weight: bold;
+  background-color: white;
+  border: white;
+}
+.menu .pizzasTypes .type5{
+  grid-area: type5;
+  color: #e08e28;
+  font-size: 1.1vw;
+  font-weight: bold;
+  background-color: white;
+  border: white;
+}
+.menu .pizzasTypes .type6{
+  grid-area: type6;
+  color: #e08e28;
+  font-size: 1.1vw;
+  font-weight: bold;
+  background-color: white;
+  border: white;
+}
+.pizzaStats{
+  display: grid;
+  grid-template-areas: 'firstPizza secondPizza';
+}
+.firstPizza{
+  grid-area:firstPizza ;
+  display: inline-block;
+  justify-self: center;
+}
+.secondPizza{
+  grid-area:secondPizza ;
+  display: inline-block;
+  justify-self: center;
+}
+.btn{
+  background-color: #e5aa4c;
+  color: white;
+  border: #db9b39;
+  font-weight: bold;
+}
+.size1{
+  margin-left: 23px;
+}
+.weight1{
+  margin-left: 19px;
+}
+.pizzaType{
+  color: #adabab;
+  font-size: 12px;
+}
+
+.cost1{
+  display: block;
+  font-size: x-large;
+  text-align: center;
+  font-family: Calibri;
+}
+.grn{
+  margin-left: 24px;
+}
+.footer{
+  grid-area: footer;
+  height: 150px;
+  background-color: #f0f0f0;
+}
+.row{
+  grid-area: main;
+}
+.amount {
+  margin-left: 4px;
+  align-self: center;
+  background-color: orange;
+  color: white;
+  border-radius: 10px;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+}
+.caption h3{
+  color: #de722a;
+  background-color: white;
+  font-weight: bold;
+}
+.firstLine{
+  display: block;
+  text-align: center;
+  color: #868686;
+}
+.sale{
+  position: fixed;
+  background-color: #d88739;
+  width: 70px;
+  margin-left:7px;
+  text-align: center;
+  z-index: 2;
+  bottom: 0;
+}
+
+
